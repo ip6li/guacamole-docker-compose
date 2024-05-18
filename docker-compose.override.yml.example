@@ -83,6 +83,8 @@
 # 0.6                2023-03-23        switched to postgres 15.2-alpine
 #####################################################################################
 
+version: '2.0'
+
 # networks
 # create a network 'guacnetwork_compose' in mode 'bridged'
 networks:
@@ -109,10 +111,10 @@ services:
     - guacd
     environment:
       - GUACD_HOSTNAME
-      - POSTGRESQL_DATABASE
-      - POSTGRESQL_HOSTNAME
-      - POSTGRESQL_PASSWORD
-      - POSTGRESQL_USER
+      - POSTGRES_DATABASE
+      - POSTGRES_HOSTNAME
+      - POSTGRES_PASSWORD
+      - POSTGRES_USER
     image: guacamole/guacamole
     links:
     - guacd
